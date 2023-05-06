@@ -1,0 +1,14 @@
+.inputContainer {
+	@apply w-full grid grid-cols-12 bg-transparent;
+	.inputField {
+		@apply col-span-5 col-start-1 pl-3
+     rounded-l-md outline-none bg-transparent 
+     border caret-[#ace69a] border-[#ace69a];
+	}
+
+	.inputButton {
+		@apply col-start-6 h-14 flex items-center justify-center
+      rounded-r-md bg-[#ace69a] text-black
+      hover:opacity-70 transition-opacity duration-500 cursor-pointer;
+	}
+}

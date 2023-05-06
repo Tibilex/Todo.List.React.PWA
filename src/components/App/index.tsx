@@ -1,23 +1,51 @@
 import React from "react";
+import { useToDoStore } from "../../data/stores/useToDoStore";
+
+import { AddInput } from "../AddInput";
 import styles from './index.module.scss';
 
 export const App: React.FC = () => {
+
+  const [
+    tasks,
+    createTask,
+    updateTask,
+    removeTask
+  ] = useToDoStore(state => [
+    state.tasks,
+    state.createTask,
+    state.updateTask,
+    state.removeTask,
+  ])
+
+  console.log(tasks)
+
   return (
     <main className={styles.main}>
       <aside className={styles.leftBar}>
-        <p>1</p>
-        <p>1</p>
-        <p>1</p>
+        <div className={styles.categoryContainer}>stat</div>
       </aside>
       <section className={styles.taskSection}>
-        <div className={styles.addTaskContainer}>stat</div>
+        <AddInput
+          onAdd={(title) => {
+            if (title){
+              createTask(title)
+            }
+          }}
+        />
+       
         <div className={styles.statisticsContainer}>stat</div>
-        <div className={styles.tasksListContainer}>stat</div>
+        <div className={styles.tasksListContainer}>
+          {!tasks.length && (<p>Task list is empty</p>)}
+          {tasks.map((task) => (<p>{task.title}</p>))
+            
+          }
+        </div>
       </section>
       <section className={styles.infoSection}>
-        <p>2</p>
-        <p>2</p>
-        <p>2</p>
+        <div className={styles.temp}></div>
+        <div className={styles.timeContainer}>stat</div>
+        <div className={styles.weatherContainer}>stat</div>
       </section>
     </main>
   )

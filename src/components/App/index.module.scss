@@ -1,15 +1,38 @@
 .main {
-	@apply grid grid-cols-5 h-screen w-screen;
+	@apply grid grid-cols-7 h-screen w-screen;
 
 	.leftBar {
 		@apply col-start-1 bg-[#2c3440];
 	}
 
 	.taskSection {
-		@apply col-start-2 col-span-2 w-full flex items-center flex-col;
+		@apply col-start-2 col-span-3 w-full flex items-center flex-col 
+		m-2 p-6 rounded-xl;
+
+		.statisticsContainer {
+			@apply bg-[#2c3440] w-full h-1/3
+			mt-6 p-6 rounded-xl;
+		}
+		.tasksListContainer {
+			@apply bg-[#2c3440] w-full h-full
+			mt-6 p-6 rounded-xl;
+		}
 	}
 
 	.infoSection {
-		@apply col-start-4 col-span-2 w-full flex items-center flex-col;
+		@apply col-start-5 col-span-3 w-full flex items-center flex-col
+		mt-2 pl-2 pt-6 pr-6 rounded-xl;
+
+		.temp {
+			@apply w-full h-14 bg-transparent;
+		}
+		.timeContainer {
+			@apply bg-[#2c3440] w-full h-1/3
+			mt-6 p-6 rounded-xl;
+		}
+		.weatherContainer {
+			@apply bg-[#2c3440] w-full h-1/3
+			mt-6 p-6 rounded-xl;
+		}
 	}
 }
