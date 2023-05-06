@@ -1,0 +1,15 @@
+.main {
+	@apply grid grid-cols-5 h-screen w-screen;
+
+	.leftBar {
+		@apply col-start-1 bg-[#2c3440];
+	}
+
+	.taskSection {
+		@apply col-start-2 col-span-2 w-full flex items-center flex-col;
+	}
+
+	.infoSection {
+		@apply col-start-4 col-span-2 w-full flex items-center flex-col;
+	}
+}
