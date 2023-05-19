@@ -1,8 +1,7 @@
-import { faker } from '@faker-js/faker';
 import { create } from "zustand";
 
 interface Task {
-  id: string;
+  id: number;
   title: string;
   createdAt: number;
   updatedAt: number;
@@ -12,16 +11,52 @@ interface Task {
 interface ToDoStore {
   tasks: Task[];
   createTask: (title: string) => void;
-  updateTask: (id: string, title: string) => void;
-  removeTask: (id: string) => void;
+  updateTask: (id: number, title: string) => void;
+  removeTask: (id: number) => void;
 }
 
 export const useToDoStore = create<ToDoStore>((set, get) => ({
-  tasks: [],
+  tasks: [
+    {
+      id: 1,
+      title: "Учить реакт",
+      createdAt: 123,
+      updatedAt: 234,
+      isComplete: false,
+    },
+    {
+      id: 2,
+      title: "Учить Nest.js",
+      createdAt: 123,
+      updatedAt: 234,
+      isComplete: false,
+    },
+    {
+      id: 3,
+      title: "Учить Next.js",
+      createdAt: 123,
+      updatedAt: 234,
+      isComplete: false,
+    },
+    {
+      id: 4,
+      title: "Учить Tailwind",
+      createdAt: 123,
+      updatedAt: 234,
+      isComplete: false,
+    },
+    {
+      id: 5,
+      title: "Учить Javascript",
+      createdAt: 123,
+      updatedAt: 234,
+      isComplete: true,
+    },
+  ],
   createTask: (title) => {
     const { tasks } = get();
     const newTask = {
-      id: faker.random.numeric(10000),
+      id: Date.now(),
       title,
       createdAt: Date.now(),
       updatedAt: Date.now(),
@@ -31,7 +66,7 @@ export const useToDoStore = create<ToDoStore>((set, get) => ({
       tasks: [newTask].concat(tasks),
     })
   },
-  updateTask: (id: string, title: string) => {
+  updateTask: (id: number, title: string) => {
     const { tasks } = get();
     set({
       tasks: tasks.map((task) => ({
@@ -40,7 +75,7 @@ export const useToDoStore = create<ToDoStore>((set, get) => ({
       }))
     })
   },
-  removeTask: (id: string) => {
+  removeTask: (id: number) => {
     const { tasks } = get();
     set({
       tasks: tasks.filter((task) => task.id !== id),

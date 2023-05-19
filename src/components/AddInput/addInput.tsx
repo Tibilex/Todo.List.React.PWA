@@ -1,7 +1,6 @@
 import React, { useCallback, useState } from 'react';
-
 import { FiPlusCircle } from 'react-icons/fi';
-import styles from './index.module.scss';
+import styles from './addInput.module.scss';
 
 interface InputProps {
   onAdd: (title: string) => void;

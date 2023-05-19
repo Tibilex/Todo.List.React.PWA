@@ -1,0 +1,7 @@
+.checkBorder {
+	border-radius: 0.375rem;
+	border: 1px solid #ace69a;
+}
+.checkSizes {
+	@apply ml-3 mr-4 w-6 h-6 flex justify-center items-center;
+}

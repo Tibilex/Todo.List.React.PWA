@@ -1,0 +1,19 @@
+.taskSection {
+	@apply col-start-2 col-span-3 w-full flex items-center flex-col 
+		m-2 p-6 rounded-xl;
+
+	.statisticsContainer {
+		@apply bg-[#2c3440] w-full h-1/3 
+			mt-6 p-6 rounded-xl;
+	}
+	.tasksListContainer {
+		@apply bg-[#2c3440] w-full h-full
+			mt-6 rounded-xl;
+		.tasksList {
+			@apply flex flex-col mt-5;
+			.tasksTitle {
+				@apply text-[#ace69a] text-lg tracking-widest pl-6 mb-5;
+			}
+		}
+	}
+}

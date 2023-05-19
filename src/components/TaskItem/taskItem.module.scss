@@ -1,0 +1,36 @@
+.itemBorder {
+	border: 1px solid rgba(99, 99, 99, 0.5);
+	border-radius: 10px;
+	margin: 0.25rem 1.5rem;
+	display: flex;
+	padding-right: 1rem;
+	.itemContainer {
+		@apply justify-between flex items-center m-1
+		w-full h-12 pr-3;
+
+		&Label {
+			cursor: pointer;
+		}
+	}
+}
+.checkButton {
+	@apply flex items-center;
+	span {
+		flex-basis: max-content;
+	}
+}
+.editButton {
+	@apply text-[#636363] hover:text-[#ace69a]
+			transition-colors duration-500 ease-in-out 
+			cursor-pointer;
+}
+
+.trashButton {
+	@apply text-[#636363] hover:text-[#F05454]
+			transition-colors duration-500 ease-in-out 
+			cursor-pointer;
+}
+
+.isComplete {
+	@apply line-through text-[#2c3440];
+}
