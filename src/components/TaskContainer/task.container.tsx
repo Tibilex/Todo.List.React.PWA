@@ -4,87 +4,68 @@ import { AddInput } from "../AddInput/addInput";
 import { TaskItem } from "../TaskItem/taskItem";
 import styles from './task.container.module.scss';
 
-
-
 export const TaskContainer: React.FC = () => {
-  const [tasks,createTask,updateTask,removeTask] = useToDoStore((state) => [
-    state.tasks,
-    state.createTask,
-    state.updateTask,
-    state.removeTask,
-  ])
+ 
+  const tasks = useToDoStore((state) => state.tasks)
+  const completeStatus = useToDoStore((state) => state.completeStatus)
+  const updateTask = useToDoStore((state) => state.updateTask)
+  const removeTask = useToDoStore((state) => state.removeTask)
 
-  const [task, setTasks] = useState(tasks)
-  const [completeTodo, setComplete] = useState(task)
-  const [activeTodo, setActive] = useState(task)
-
-  const changeTodoStatus = (id: number) => {
-    const copyList = [...task]
-    const current = copyList.find(t => t.id === id)
-    if (current != undefined){
-      current.isComplete = !current.isComplete
-      setTasks(copyList)
-    }
-  }
+  const [completeTodo, setComplete] = useState(tasks)
+  const [activeTodo, setActive] = useState(tasks)
 
   const isComplete = () => {
-    const copyList = [...task]
+    const copyList = [...tasks]
     const completed = copyList.filter(t => t.isComplete === true)
     setComplete(completed)
   }
 
   const isActive = () => {
-    const copyList = [...task]
+    const copyList = [...tasks]
     const active = copyList.filter(t => t.isComplete === false)
     setActive(active)
-  }
-
-  const removeTodo = (id:number) => {
-    setTasks([...task].filter(t => t.id !== id))
   }
 
   useEffect(() => {
     isComplete()
     isActive()
-  }, [task])
+  }, [tasks])
+
   return (
 
     <section className={styles.taskSection}>
-        <AddInput
-          onAdd={(title) => {
-            if (title){
-              createTask(title)
-            }
-          }}
-        />
-       
+        <AddInput/>
+
         <div className={styles.statisticsContainer}>stat</div>
         <div className={styles.tasksListContainer}>
           <div className={styles.tasksList}>
             <article className={styles.tasksTitle}>Active tasks</article>
+            {!activeTodo.length && (<p className={styles.emptyTasks}>Task list is empty</p>)}
             {activeTodo.map((task) => (
               <TaskItem
               key={task.id}
               id={task.id}
               title={task.title}
               isComplete={task.isComplete}
-              taskStatus={changeTodoStatus}
+              taskStatus={completeStatus}
               onEdit={updateTask}
-              onRemove={removeTodo}
+              onRemove={removeTask}
               />
             ))}
           </div>
           <div className={styles.tasksList}>
             <article className={styles.tasksTitle}>Completed tasks</article>
+            {
+            !completeTodo.length && (<p className={styles.emptyTasks}>you haven't done anything yet</p>)}
             {completeTodo.map((task) => (
               <TaskItem
               key={task.id}
               id={task.id}
               title={task.title}
               isComplete={task.isComplete}
-              taskStatus={changeTodoStatus}
+              taskStatus={completeStatus}
               onEdit={updateTask}
-              onRemove={removeTodo}
+              onRemove={removeTask}
               />
             ))}
           </div>

@@ -5,12 +5,12 @@ import { CheckBox } from '../CheckBox/checkBox';
 import styles from './taskItem.module.scss';
 
 interface ItemProps {
-  id: number;
+  id: string;
   title: string;
   isComplete: boolean;
-  taskStatus: (id: number) => void;
-  onEdit: (id: number, title: string) => void;
-  onRemove: (id: number) => void;
+  taskStatus: (id: string) => void;
+  onEdit: (id: string, title: string) => void;
+  onRemove: (id: string) => void;
 }
 
 export const TaskItem: React.FC<ItemProps> = ({

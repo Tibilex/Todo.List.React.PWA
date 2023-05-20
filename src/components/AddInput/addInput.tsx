@@ -1,18 +1,14 @@
 import React, { useCallback, useState } from 'react';
 import { FiPlusCircle } from 'react-icons/fi';
+import { useToDoStore } from "../../data/stores/useToDoStore";
 import styles from './addInput.module.scss';
 
-interface InputProps {
-  onAdd: (title: string) => void;
-}
-
-export const AddInput: React.FC<InputProps> = ({
-  onAdd,
-}) => {
+export const AddInput: React.FC = () => {
+  const createTask = useToDoStore((state) => state.createTask)
 
   const [inputValue, setInputValue] = useState('')
   const addTask = useCallback(() => {
-    onAdd(inputValue);
+    createTask(inputValue);
     setInputValue('');
   }, [inputValue])
 

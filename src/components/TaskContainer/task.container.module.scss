@@ -14,6 +14,9 @@
 			.tasksTitle {
 				@apply text-[#ace69a] text-lg tracking-widest pl-6 mb-5;
 			}
+			.emptyTasks {
+				@apply ml-6 italic text-[#929191];
+			}
 		}
 	}
 }
