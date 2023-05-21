@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import React from 'react';
 import { CiEdit, CiTrash } from 'react-icons/ci';
-import { useToDoStatistic } from '../../data/stores/useToDoStatistic';
+import { useToDoStatistic } from '../../data/stores/useToDoStatisticStore';
 import { CheckBox } from '../CheckBox/checkBox';
 import styles from './taskItem.module.scss';
 
@@ -28,7 +28,7 @@ export const TaskItem: React.FC<IItemProps> = ({
     <div className={styles.itemContainer}>
       <button 
         className={styles.checkButton}
-        onClick={() => [taskStatus(id), isComplete ? completeStatIncrement(0) : completeStatIncrement(1)]}>
+        onClick={() => [taskStatus(id), isComplete ? completeStatIncrement(-1) : completeStatIncrement(1)]}>
         <CheckBox
           isChecked={isComplete}
         />

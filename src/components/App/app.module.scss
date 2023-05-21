@@ -4,41 +4,15 @@
 	.leftBar {
 		@apply col-start-1 bg-[#2c3440];
 	}
-
-	.taskSection {
-		@apply col-start-2 col-span-3 w-full flex items-center flex-col 
-		m-2 p-6 rounded-xl;
-
-		.statisticsContainer {
-			@apply bg-[#2c3440] w-full h-1/3 
-			mt-6 p-6 rounded-xl;
-		}
-		.tasksListContainer {
-			@apply bg-[#2c3440] w-full h-full
-			mt-6 p-6 rounded-xl;
-			.tasksList {
-				@apply flex flex-col;
-				.tasksTitle {
-					@apply text-[#ace69a] text-xl tracking-widest;
-				}
-			}
-		}
+	.categoryContainer {
 	}
 
 	.infoSection {
 		@apply col-start-5 col-span-3 w-full flex items-center flex-col
-		mt-2 pl-2 pt-6 pr-6 rounded-xl;
+		mt-2 pt-6 pl-3 pr-6 rounded-xl flex-wrap relative;
 
 		.temp {
 			@apply w-full h-14 bg-transparent;
-		}
-		.timeContainer {
-			@apply bg-[#2c3440] w-full h-1/3
-			mt-6 p-6 rounded-xl;
-		}
-		.weatherContainer {
-			@apply bg-[#2c3440] w-full h-1/3
-			mt-6 p-6 rounded-xl;
 		}
 	}
 }

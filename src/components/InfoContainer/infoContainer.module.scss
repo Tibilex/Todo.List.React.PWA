@@ -1,0 +1,24 @@
+.infoSection {
+	@apply w-full flex items-center flex-col
+		rounded-xl flex-wrap;
+
+	.timeContainer {
+		@apply bg-[#2c3440] w-full
+			mt-6 rounded-xl;
+		.dateTimeContainer {
+			@apply flex items-center p-6 w-full flex-wrap;
+		}
+		.timeBlock {
+			@apply flex flex-col w-1/2 tracking-widest flex-wrap;
+			.time {
+				@apply flex items-center pt-2 text-3xl flex-wrap;
+			}
+		}
+		.dateBlock {
+			@apply flex flex-col tracking-widest flex-wrap;
+			.date {
+				@apply flex items-center pt-2 text-3xl flex-wrap;
+			}
+		}
+	}
+}

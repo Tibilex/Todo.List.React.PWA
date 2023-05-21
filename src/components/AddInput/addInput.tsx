@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { FiPlusCircle } from 'react-icons/fi';
-import { useToDoStatistic } from '../../data/stores/useToDoStatistic';
+import { useToDoStatistic } from '../../data/stores/useToDoStatisticStore';
 import { useToDoStore } from "../../data/stores/useToDoStore";
 import styles from './addInput.module.scss';
 

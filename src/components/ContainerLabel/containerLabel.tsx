@@ -4,7 +4,7 @@ interface IContainerLabelProps{
 
 export const ContainerLabel: React.FC<IContainerLabelProps> = ({title}) => {
   return (
-    <div className="pt-5 pl-6 pb-5 text-[#ace69a] text-lg tracking-widest">
+    <div className="pt-5 pl-6 pb-5 text-[#ace69a] text-lg tracking-widest w-auto">
       <p>{title}</p>
     </div>
   )

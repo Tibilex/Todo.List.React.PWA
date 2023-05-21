@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useToDoStatistic } from "../../data/stores/useToDoStatistic";
+import { useToDoStatistic } from "../../data/stores/useToDoStatisticStore";
 import { useToDoStore } from "../../data/stores/useToDoStore";
 import { AddInput } from "../AddInput/addInput";
 import { ContainerLabel } from "../ContainerLabel/containerLabel";

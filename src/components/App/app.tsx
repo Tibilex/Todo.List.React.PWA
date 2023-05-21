@@ -1,5 +1,7 @@
 import React from "react";
+import { InfoContainer } from "../InfoContainer/infoContainer";
 import { TaskContainer } from "../TaskContainer/task.container";
+import { WeatherContainer } from "../WeatherContainer/weatherContainer";
 import styles from './app.module.scss';
 
 export const App: React.FC = () => {
@@ -9,14 +11,13 @@ export const App: React.FC = () => {
       <aside className={styles.leftBar}>
         <div className={styles.categoryContainer}>stat</div>
       </aside>
-
       <TaskContainer />
-
-      <section className={styles.infoSection}>
+      <div className={styles.infoSection}>
         <div className={styles.temp}></div>
-        <div className={styles.timeContainer}>stat</div>
-        <div className={styles.weatherContainer}>stat</div>
-      </section>
+        <InfoContainer />
+        <WeatherContainer />
+      </div>
+      
     </main>
   )
 }
