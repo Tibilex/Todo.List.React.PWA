@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
+import { useToDoStatistic } from "../../data/stores/useToDoStatistic";
 import { useToDoStore } from "../../data/stores/useToDoStore";
 import { AddInput } from "../AddInput/addInput";
+import { ContainerLabel } from "../ContainerLabel/containerLabel";
+import { StatisticCounter } from "../StatCounter/statCounter";
 import { TaskItem } from "../TaskItem/taskItem";
 import styles from './task.container.module.scss';
 
 export const TaskContainer: React.FC = () => {
  
-  const tasks = useToDoStore((state) => state.tasks)
-  const completeStatus = useToDoStore((state) => state.completeStatus)
-  const updateTask = useToDoStore((state) => state.updateTask)
-  const removeTask = useToDoStore((state) => state.removeTask)
+  const [tasks, completeStatus, updateTask, removeTask] = useToDoStore((state) => 
+  [state.tasks, state.completeStatus, state.updateTask, state.removeTask])
+  const [createScore, completeScore, deleteScore] = useToDoStatistic((state) => 
+  [state.createdTaskScore, state.completedTaskScore, state.deletedTaskScore])
 
   const [completeTodo, setComplete] = useState(tasks)
   const [activeTodo, setActive] = useState(tasks)
@@ -36,10 +39,17 @@ export const TaskContainer: React.FC = () => {
     <section className={styles.taskSection}>
         <AddInput/>
 
-        <div className={styles.statisticsContainer}>stat</div>
+        <div className={styles.statisticsContainer}>
+            <ContainerLabel title={'Total progress'}/>
+          <div className={styles.roundedContainer}>
+            <StatisticCounter count={createScore} label={'Created'}/>
+            <StatisticCounter count={completeScore} label={'Completed'}/>
+            <StatisticCounter count={deleteScore} label={'Deleted'}/>
+          </div>
+        </div>
         <div className={styles.tasksListContainer}>
           <div className={styles.tasksList}>
-            <article className={styles.tasksTitle}>Active tasks</article>
+            <ContainerLabel title={'Active tasks'}/>
             {!activeTodo.length && (<p className={styles.emptyTasks}>Task list is empty</p>)}
             {activeTodo.map((task) => (
               <TaskItem
@@ -54,7 +64,7 @@ export const TaskContainer: React.FC = () => {
             ))}
           </div>
           <div className={styles.tasksList}>
-            <article className={styles.tasksTitle}>Completed tasks</article>
+            <ContainerLabel title={'Completed tasks'}/> 
             {
             !completeTodo.length && (<p className={styles.emptyTasks}>you haven't done anything yet</p>)}
             {completeTodo.map((task) => (

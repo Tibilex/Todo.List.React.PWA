@@ -2,11 +2,11 @@ import React from "react";
 import { HiOutlineCheck } from "react-icons/hi";
 import styles from './checkBox.module.scss';
 
-interface CheckProps {
+interface ICheckProps {
   isChecked: boolean;
 }
 
-export const CheckBox: React.FC<CheckProps> = ({isChecked}) => {
+export const CheckBox: React.FC<ICheckProps> = ({isChecked}) => {
   return (
     <div className={`${styles.checkBorder} 
      ${isChecked ? 'bg-[#ace69a]' : ''} ${styles.checkSizes}`}>

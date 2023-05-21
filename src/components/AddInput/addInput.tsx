@@ -1,10 +1,12 @@
 import React, { useCallback, useState } from 'react';
 import { FiPlusCircle } from 'react-icons/fi';
+import { useToDoStatistic } from '../../data/stores/useToDoStatistic';
 import { useToDoStore } from "../../data/stores/useToDoStore";
 import styles from './addInput.module.scss';
 
 export const AddInput: React.FC = () => {
   const createTask = useToDoStore((state) => state.createTask)
+  const createScore = useToDoStatistic((state) => state.updateCreateScore)
 
   const [inputValue, setInputValue] = useState('')
   const addTask = useCallback(() => {
@@ -22,13 +24,14 @@ export const AddInput: React.FC = () => {
         onKeyDown={(evt) => {
           if (evt.key === 'Enter'){
             addTask();
+            createScore(1)
           }
         }}
         placeholder='Type your task'
       />
       <button
         className={styles.inputButton}
-        onClick={addTask}
+        onClick={() => [addTask(), createScore(1)]}
         aria-label='add'>
         <FiPlusCircle size={24}/>
       </button>

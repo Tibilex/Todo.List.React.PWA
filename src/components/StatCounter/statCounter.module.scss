@@ -1,0 +1,17 @@
+.container {
+	@apply flex flex-col items-center;
+
+	.radialContainer {
+		border: 1px solid #ace69a;
+		@apply border rounded-full border-[#ace69a]  
+    min-h-[110px] min-w-[110px] flex flex-col justify-center items-center;
+
+		.counter {
+			@apply text-4xl pt-2 text-[#ace69a] tracking-normal;
+		}
+	}
+
+	.label {
+		@apply text-sm p-2;
+	}
+}

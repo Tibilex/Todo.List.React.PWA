@@ -1,10 +1,11 @@
 import cn from 'classnames';
 import React from 'react';
 import { CiEdit, CiTrash } from 'react-icons/ci';
+import { useToDoStatistic } from '../../data/stores/useToDoStatistic';
 import { CheckBox } from '../CheckBox/checkBox';
 import styles from './taskItem.module.scss';
 
-interface ItemProps {
+interface IItemProps {
   id: string;
   title: string;
   isComplete: boolean;
@@ -13,7 +14,7 @@ interface ItemProps {
   onRemove: (id: string) => void;
 }
 
-export const TaskItem: React.FC<ItemProps> = ({
+export const TaskItem: React.FC<IItemProps> = ({
   id,
   title,
   isComplete,
@@ -21,13 +22,13 @@ export const TaskItem: React.FC<ItemProps> = ({
   onRemove,
  // onEdit,
 }) => {
-  
+  const [completeStatIncrement, deleteStatIncrement] = useToDoStatistic((state) => [state.updateCompleteScore, state.updateDeleteScore])
   return (
     <div className={styles.itemBorder}>  
     <div className={styles.itemContainer}>
       <button 
         className={styles.checkButton}
-        onClick={() => taskStatus(id)}>
+        onClick={() => [taskStatus(id), isComplete ? completeStatIncrement(0) : completeStatIncrement(1)]}>
         <CheckBox
           isChecked={isComplete}
         />
@@ -42,7 +43,7 @@ export const TaskItem: React.FC<ItemProps> = ({
         onClick={() => onRemove(id)}>
         <CiTrash className={styles.trashButton}
         size={24}
-        onClick={() => onRemove(id)}
+        onClick={() => [onRemove(id), deleteStatIncrement(1)]}
         />
       </button>
     </div> 
