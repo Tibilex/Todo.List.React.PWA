@@ -9,22 +9,17 @@ interface WeatherStore {
   humidity: number;
   weather: string;
   windSpeed: number;
-  windGust: number;
-  windDeg: number;
   tempUpdate: (num: number) => void;
   feelsLikeUpdate: (feels: number) => void;
   tempMinUpdate: (Min: number) => void;
   tempMaxUpdate: (Max: number) => void;
   pressureUpdate: (pressure: number) => void;
-  humidityUpdate: (humidity: number) => void; //влажность
+  humidityUpdate: (humidity: number) => void;
   weatherUpdate: (weather: string) => void;
   windSpeedUpdate: (windSpeed: number) => void;
-  windGustUpdate: (windGust: number) => void;
-  windDegUpdate: (windDeg: number) => void;
-
 }
 
-export const useWeatherStore = create<WeatherStore>((set, get) => ({
+export const useWeatherStore = create<WeatherStore>((set) => ({
   temp: 0,
   feelsLike: 0,
   tempMin: 0,
@@ -33,8 +28,6 @@ export const useWeatherStore = create<WeatherStore>((set, get) => ({
   humidity: 0,
   weather: "string",
   windSpeed: 0,
-  windGust: 0,
-  windDeg: 0,
   tempUpdate: (num) => { set({ temp: num }) },
   feelsLikeUpdate: (num) => { set({ feelsLike: num }) },
   tempMinUpdate: (num) => { set({ tempMin: num }) },
@@ -43,6 +36,4 @@ export const useWeatherStore = create<WeatherStore>((set, get) => ({
   humidityUpdate: (num) => { set({ humidity: num }) },
   weatherUpdate: (str) => { set({ weather: str }) },
   windSpeedUpdate: (num) => { set({ windSpeed: num }) },
-  windGustUpdate: (num) => { set({ windGust: num }) },
-  windDegUpdate: (num) => { set({ windDeg: num }) },
 }))
