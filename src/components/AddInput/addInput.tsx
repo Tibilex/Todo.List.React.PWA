@@ -25,6 +25,13 @@ export const AddInput: React.FC = () => {
           if (evt.key === 'Enter'){
             addTask();
             createScore(1)
+            Notification.requestPermission().then(perm => {
+              if (perm === "granted"){
+                new Notification("Example notification", {
+                  body: 'Task added successfully'
+                })
+              }
+            })
           }
         }}
         placeholder='Type your task'
