@@ -22,5 +22,5 @@ export default defineConfig({
     },
   })
   ],
-  base: '/todo.list.react/',
+  base: '/',
 })
