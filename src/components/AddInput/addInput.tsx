@@ -38,7 +38,14 @@ export const AddInput: React.FC = () => {
       />
       <button
         className={styles.inputButton}
-        onClick={() => [addTask(), createScore(1)]}
+        onClick={() => [addTask(), createScore(1), 
+          Notification.requestPermission().then(perm => {
+          if (perm === "granted"){
+            new Notification("Example notification", {
+              body: 'Task added successfully'
+            })
+          }
+        })]}
         aria-label='add'>
         <FiPlusCircle size={24}/>
       </button>
