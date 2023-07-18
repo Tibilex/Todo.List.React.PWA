@@ -11,6 +11,7 @@ export const TaskContainer: React.FC = () => {
  
   const [tasks, completeStatus, updateTask, removeTask] = useToDoStore((state) => 
   [state.tasks, state.completeStatus, state.updateTask, state.removeTask])
+  
   const [createScore, completeScore, deleteScore] = useToDoStatistic((state) => 
   [state.createdTaskScore, state.completedTaskScore, state.deletedTaskScore])
 

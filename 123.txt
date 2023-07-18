@@ -1,0 +1,17 @@
+ registerType: "autoUpdate",
+  outDir: "build",
+  manifest: {
+    name: 'Vite+TypeScript+PWA',
+    description: 'test PWA',
+    theme_color: '#ffffff',
+    icons: [{
+      src: 'assets/images/android-chrome-192x192.png',
+      sizes: '192x192',
+      tape: 'image/png',
+    },
+    {
+      src: 'assets/images/android-chrome-512x512.png',
+      sizes: '512x512',
+      tape: 'image/png',
+    }]
+  },
