@@ -2,7 +2,6 @@
 	"name": "Todo PWA",
 	"short_name": "PWA",
 	"description": "First todo list application based on: Typescript and React",
-	"start_url": "/",
 	"icons": [{
 		"src": "/icon/android192x192.png",
 		"sizes": "192x192",
@@ -15,6 +14,5 @@
 	}],
 	"background_color": "#2c3440",
 	"display": "standalone",
-	"theme_color": "#2c3440",
-	"scope": "/"
+	"theme_color": "#2c3440"
 }
