@@ -6,6 +6,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   plugins: [react(), VitePWA({
     registerType: "autoUpdate",
+    injectRegister: null,
     manifest: {
       name: 'Todo PWA',
       short_name: 'PWA',
