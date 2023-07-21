@@ -41,8 +41,19 @@ export const AddInput: React.FC = () => {
         onClick={() => [addTask(), createScore(1), 
           Notification.requestPermission().then(perm => {
           if (perm === "granted"){
-            new Notification("Example notification", {
-              body: 'Task added successfully'
+            navigator.serviceWorker.getRegistration().then((reg) => {
+              console.log(reg)
+              const options = {
+                body: 'Thanks for allowing push notification !',
+                icon: '/icon/icon-512x512.png',
+                vibrate: [100, 50, 100],
+                data: {
+                  dateOfArrival: Date.now(),
+                  primaryKey: 0,
+                },
+              }
+        
+              reg?.showNotification("PWA", options)
             })
           }
         })]}
