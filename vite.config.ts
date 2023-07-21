@@ -5,7 +5,8 @@ import { VitePWA } from 'vite-plugin-pwa'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), VitePWA({
-    registerType: "autoUpdate", manifest: {
+    registerType: "autoUpdate",
+    manifest: {
       name: 'Todo PWA',
       short_name: 'PWA',
       description: 'First todo list application based on: Typescript and React',
