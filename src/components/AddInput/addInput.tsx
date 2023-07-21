@@ -44,7 +44,7 @@ export const AddInput: React.FC = () => {
             navigator.serviceWorker.getRegistration().then((reg) => {
               console.log(reg)
               const options = {
-                body: 'Thanks for allowing push notification !',
+                body: 'Task added !!!',
                 icon: '/icon/icon-512x512.png',
                 vibrate: [100, 50, 100],
                 data: {
