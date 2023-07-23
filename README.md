@@ -23,4 +23,6 @@
 ## Application screens
 
 ![image](https://github.com/Tibilex/todo.list.react/assets/45212175/63267fd4-b520-424a-acb6-dfee979ed463)
+![image](https://github.com/Tibilex/todo.list.react/assets/45212175/a5def4bb-2c8b-4eec-bacf-4f9d6dc467ab)
+![image](https://github.com/Tibilex/todo.list.react/assets/45212175/f4b7c44a-da45-4054-bc05-3ead3e70c5ea)
 
