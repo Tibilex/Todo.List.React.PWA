@@ -8,11 +8,13 @@ interface ICheckProps {
 
 export const CheckBox: React.FC<ICheckProps> = ({isChecked}) => {
   return (
-    <div className={`${styles.checkBorder} 
-     ${isChecked ? 'bg-[#ace69a]' : ''} ${styles.checkSizes}`}>
-      {isChecked &&
-        <HiOutlineCheck size={22} className='text-black'/>
-      }
-    </div>
+    <>
+      <div className={`${styles.checkBorder} 
+      ${isChecked ? 'bg-[#ace69a]' : ''} ${styles.checkSizes}`}>
+        {isChecked &&
+          <HiOutlineCheck size={22} className='text-black'/>
+        }
+      </div>
+    </>
   )
 }

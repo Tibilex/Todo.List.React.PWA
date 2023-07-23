@@ -6,7 +6,7 @@
 		@apply bg-[#2c3440] w-full
 			mt-6 rounded-xl;
 		.dateTimeContainer {
-			@apply flex items-center p-6 w-full flex-wrap;
+			@apply flex items-center pl-6 pb-6 w-full flex-wrap;
 		}
 		.timeBlock {
 			@apply flex flex-col w-1/2 tracking-widest flex-wrap;

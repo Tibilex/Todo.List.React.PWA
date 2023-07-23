@@ -1,6 +1,6 @@
 .taskSection {
-	@apply col-start-2 col-span-3 w-full flex items-center flex-col 
-		m-2 p-6 rounded-xl overflow-hidden;
+	@apply lg:w-[1000px] flex flex-col 
+	rounded-xl overflow-hidden;
 
 	.statisticsContainer {
 		@apply bg-[#2c3440] w-full 
@@ -19,5 +19,8 @@
 				@apply ml-6 italic text-[#929191];
 			}
 		}
+	}
+	.addInput {
+		@apply flex justify-start items-start pt-6 w-1/2;
 	}
 }

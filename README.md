@@ -19,3 +19,5 @@
 6. Faker.js
 7. Webfontloader
 8. Vite-PWA-Plugin
+9. React-Router-Dom
+10. Tailwind-clip-path

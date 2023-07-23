@@ -1,18 +1,10 @@
 .main {
-	@apply grid grid-cols-7 h-screen w-screen;
-
-	.leftBar {
-		@apply col-start-1 bg-[#2c3440];
+	@apply flex flex-col h-screen w-full;
+	.inputs {
+		@apply flex w-full items-center;
 	}
-	.categoryContainer {
-	}
-
 	.infoSection {
-		@apply col-start-5 col-span-3 w-full flex items-center flex-col
+		@apply w-full flex items-center flex-col
 		mt-2 pt-6 pl-3 pr-6 rounded-xl flex-wrap relative;
-
-		.temp {
-			@apply w-full h-14 bg-transparent;
-		}
 	}
 }

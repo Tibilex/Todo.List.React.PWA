@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useToDoStatistic } from "../../data/stores/useToDoStatisticStore";
 import { useToDoStore } from "../../data/stores/useToDoStore";
-import { AddInput } from "../AddInput/addInput";
-import { ContainerLabel } from "../ContainerLabel/containerLabel";
-import { StatisticCounter } from "../StatCounter/statCounter";
-import { TaskItem } from "../TaskItem/taskItem";
+import { StatisticCounter } from "../Stats/StatCounter/stat-counter";
+import { AddInput } from "./AddInput/addInput";
+import { ContainerLabel } from "./ContainerLabel/container-label";
+import { TaskItem } from "./TaskItem/taskItem";
 import styles from './task.container.module.scss';
 
 export const TaskContainer: React.FC = () => {
@@ -37,9 +37,7 @@ export const TaskContainer: React.FC = () => {
 
   return (
 
-    <section className={styles.taskSection}>
-        <AddInput/>
-
+    <section className={styles.taskSection}>  
         <div className={styles.statisticsContainer}>
             <ContainerLabel title={'Total progress'}/>
           <div className={styles.roundedContainer}>
@@ -47,6 +45,9 @@ export const TaskContainer: React.FC = () => {
             <StatisticCounter count={completeScore} label={'Completed'}/>
             <StatisticCounter count={deleteScore} label={'Deleted'}/>
           </div>
+        </div>
+        <div className={styles.addInput}>
+          <AddInput/>
         </div>
         <div className={styles.tasksListContainer}>
           <div className={styles.tasksList}>
