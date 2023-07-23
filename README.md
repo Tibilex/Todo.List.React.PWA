@@ -1,4 +1,6 @@
-# todo.list.react
+# Todo.List.React.PWA
+
+# Application link https://vite-react-pwa-ts.vercel.app/
 
 ## Used technology
 
