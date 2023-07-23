@@ -16,8 +16,11 @@
 3. Nanoid
 4. React-icons
 5. Classnames
-6. Faker.js
-7. Webfontloader
-8. Vite-PWA-Plugin
-9. React-Router-Dom
-10. Tailwind-clip-path
+6. Webfontloader
+7. Vite-PWA-Plugin
+8. Tailwind-clip-path
+
+## Application screens
+
+![image](https://github.com/Tibilex/todo.list.react/assets/45212175/63267fd4-b520-424a-acb6-dfee979ed463)
+
