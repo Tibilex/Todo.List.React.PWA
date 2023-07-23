@@ -21,6 +21,6 @@
 		}
 	}
 	.addInput {
-		@apply flex justify-start items-start pt-6 w-1/2;
+		@apply flex justify-start items-start pt-6 md:w-1/2 lg:w-1/2 w-full;
 	}
 }

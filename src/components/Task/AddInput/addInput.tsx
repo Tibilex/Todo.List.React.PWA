@@ -40,23 +40,11 @@ export const AddInput: React.FC = () => {
           className={styles.inputButton}
           onClick={() => [addTask(), createScore(1), 
             Notification.requestPermission().then(perm => {
-            if (perm === "granted"){
-              navigator.serviceWorker.getRegistration().then((reg) => {
-                console.log(reg)
-                const options = {
-                  body: 'Task added !!!',
-                  icon: '/icon/icon-512x512.png',
-                  vibrate: [100, 50, 100],
-                  data: {
-                    dateOfArrival: Date.now(),
-                    primaryKey: 0,
-                  },
-                }
-          
-                reg?.showNotification("PWA", options)
-              })
+              if (perm === "granted"){
+                SendNotification('Task added !!!');
+              }
             }
-          })]}
+          )]}
           aria-label='add'>
           <FiPlusCircle size={24}/>
         </button>

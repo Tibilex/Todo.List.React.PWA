@@ -36,12 +36,12 @@ export const DateContainer: React.FC = () => {
           <div className={styles.dateTimeContainer}>
             <div className={styles.timeBlock}>
               <p>On our watch</p>
-              <span className={styles.time}><BiTimeFive size={36} className="mr-2"/>{time}</span>
+              <span className={styles.time}><BiTimeFive size={30} className={styles.icon}/>{time}</span>
               
             </div>
             <div className={styles.dateBlock}>
               <p>Today we have</p>
-              <span className={styles.date}><AiOutlineCalendar size={36} className="mr-2"/>{date}</span>
+              <span className={styles.date}><AiOutlineCalendar size={30} className={styles.icon}/>{date}</span>
             </div>
           </div>
         </div> 
